@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo_oscuro">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Avatar circular -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:id="@+id/tv_avatar"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:text="?"
+                android:textSize="36sp"
+                android:textStyle="bold"
+                android:textColor="@color/blanco"
+                android:gravity="center"
+                android:background="@drawable/bg_avatar"
+                android:layout_marginBottom="12dp" />
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:indeterminateTint="@color/verde_activo" />
+
+            <TextView
+                android:id="@+id/tv_nombre_completo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="—"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/blanco" />
+        </LinearLayout>
+
+        <!-- Card datos personales -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="@color/fondo_card"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DATOS PERSONALES"
+                    android:textSize="11sp"
+                    android:textColor="@color/gris_texto"
+                    android:letterSpacing="0.1"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- Email -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Email"
+                    android:textSize="11sp"
+                    android:textColor="@color/gris_texto" />
+                <TextView
+                    android:id="@+id/tv_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="—"
+                    android:textSize="15sp"
+                    android:textColor="@color/blanco"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Teléfono -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Teléfono"
+                    android:textSize="11sp"
+                    android:textColor="@color/gris_texto" />
+                <TextView
+                    android:id="@+id/tv_telefono"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="—"
+                    android:textSize="15sp"
+                    android:textColor="@color/blanco"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Documento -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Documento de identidad"
+                    android:textSize="11sp"
+                    android:textColor="@color/gris_texto" />
+                <TextView
+                    android:id="@+id/tv_documento"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="—"
+                    android:textSize="15sp"
+                    android:textColor="@color/blanco" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Botón cerrar sesión -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_cerrar_sesion"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="Cerrar sesión"
+            android:textSize="15sp"
+            android:backgroundTint="@color/rojo_inactivo"
+            android:textColor="@color/blanco"
+            android:layout_marginTop="8dp" />
+
+    </LinearLayout>
+</ScrollView>

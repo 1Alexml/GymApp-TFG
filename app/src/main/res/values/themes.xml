@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tema base de la app (oscuro) -->
+    <style name="Theme.GymClientApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/verde_activo</item>
+        <item name="colorPrimaryVariant">@color/fondo_card</item>
+        <item name="colorOnPrimary">@color/blanco</item>
+        <item name="colorSecondary">@color/azul_acento</item>
+        <item name="colorOnSecondary">@color/blanco</item>
+        <item name="android:colorBackground">@color/fondo_oscuro</item>
+        <item name="android:windowBackground">@color/fondo_oscuro</item>
+        <item name="colorSurface">@color/fondo_card</item>
+        <item name="colorOnSurface">@color/blanco</item>
+        <item name="android:statusBarColor">@color/fondo_card</item>
+        <item name="android:navigationBarColor">@color/fondo_card</item>
+    </style>
+
+    <!-- Splash sin ActionBar -->
+    <style name="Theme.GymClientApp.Splash" parent="Theme.GymClientApp">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+</resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Paleta principal (tema oscuro de gimnasio) -->
+    <color name="fondo_oscuro">#121212</color>
+    <color name="fondo_card">#1E1E1E</color>
+    <color name="blanco">#FFFFFF</color>
+    <color name="gris_texto">#9E9E9E</color>
+    <color name="verde_activo">#4CAF50</color>
+    <color name="rojo_inactivo">#F44336</color>
+    <color name="amarillo_pendiente">#FFC107</color>
+    <color name="azul_acento">#2196F3</color>
+
+    <!-- Navigation -->
+    <color name="nav_selected">#4CAF50</color>
+    <color name="nav_unselected">#757575</color>
+
+    <!-- Temas seleccionables (sincronizados con la web) -->
+    <color name="tema_naranja">#FF5C00</color>
+    <color name="tema_azul">#00B4D8</color>
+    <color name="tema_morado">#A855F7</color>
+
+    <!-- Requeridos por Material / AppCompat -->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>

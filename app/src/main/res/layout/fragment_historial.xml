@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/swipe_refresh"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/fondo_oscuro"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Historial de entradas"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/blanco"
+            android:layout_marginBottom="16dp" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:visibility="gone"
+            android:indeterminateTint="@color/verde_activo" />
+
+        <TextView
+            android:id="@+id/tv_sin_entradas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aún no has visitado el gimnasio."
+            android:textSize="14sp"
+            android:textColor="@color/gris_texto"
+            android:visibility="gone"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="32dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_entradas"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false" />
+
+    </LinearLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
