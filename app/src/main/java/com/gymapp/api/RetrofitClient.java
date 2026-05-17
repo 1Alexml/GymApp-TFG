@@ -16,7 +16,7 @@ public class RetrofitClient {
 
     // ── Cambia esta URL según el entorno ──────────────────────────────────────
     // Emulador Android Studio:
-    private static final String BASE_URL = "http://10.0.2.2:5034/api/";
+    private static final String BASE_URL = "https://webtfgback-production.up.railway.app/api/";
     // Dispositivo físico (reemplaza con la IP de tu PC en la red local):
     // private static final String BASE_URL = "http://192.168.1.100:5034/api/";
     // ─────────────────────────────────────────────────────────────────────────
