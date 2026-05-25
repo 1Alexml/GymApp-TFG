@@ -1,5 +1,5 @@
 package com.gymapp.model;
-package com.gymapp.model;
+
 
 import com.google.gson.annotations.SerializedName;
 
