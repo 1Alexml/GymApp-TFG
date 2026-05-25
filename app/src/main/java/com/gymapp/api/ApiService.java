@@ -5,6 +5,7 @@ import com.gymapp.model.LoginResponse;
 import com.gymapp.model.EntradaItem;
 import com.gymapp.model.PerfilResponse;
 import com.gymapp.model.SuscripcionConGimnasio;
+import com.gymapp.model.RegistroGimnasio;
 
 import java.util.List;
 
@@ -45,6 +46,14 @@ public interface ApiService {
      */
     @GET("cliente/{id}/entradas")
     Call<List<EntradaItem>> getEntradas(@Path("id") int idCliente);
+
+    /**
+     * GET /api/cliente/{id}/mis-gimnasios
+     * Devuelve todos los gimnasios del DNI del cliente con suscripción y entradas por gym.
+     */
+    @GET("cliente/{id}/mis-gimnasios")
+    Call<List<RegistroGimnasio>> getMisGimnasios(@Path("id") int idCliente);
+
     /**
      * GET /api/cliente/{id}/suscripciones
      * Devuelve TODAS las suscripciones del DNI del cliente, con nombre de gimnasio.

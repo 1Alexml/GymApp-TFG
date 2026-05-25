@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/swipe_refresh"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -16,7 +17,7 @@
             android:orientation="vertical"
             android:padding="20dp">
 
-            <!-- Bienvenida -->
+            <!-- Saludo -->
             <TextView
                 android:id="@+id/tv_bienvenida"
                 android:layout_width="wrap_content"
@@ -33,7 +34,22 @@
                 android:text="Aquí tienes el estado de tu cuenta"
                 android:textSize="14sp"
                 android:textColor="@color/gris_texto"
-                android:layout_marginBottom="24dp" />
+                android:layout_marginBottom="16dp" />
+
+            <!-- Tabs de gimnasios (oculto si solo hay 1) -->
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_gimnasios"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginBottom="16dp"
+                app:tabMode="scrollable"
+                app:tabGravity="start"
+                app:tabIndicatorColor="@color/verde_activo"
+                app:tabSelectedTextColor="@color/blanco"
+                app:tabTextColor="@color/gris_texto"
+                app:tabBackground="@color/fondo_card"
+                style="@style/Widget.MaterialComponents.TabLayout" />
 
             <!-- ProgressBar -->
             <ProgressBar
@@ -44,14 +60,13 @@
                 android:visibility="gone"
                 android:indeterminateTint="@color/verde_activo" />
 
-            <!-- Card CON suscripción activa -->
+            <!-- Card CON suscripción -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_suscripcion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:visibility="gone"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
                 app:cardBackgroundColor="@color/fondo_card"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp">
@@ -88,7 +103,7 @@
                                 android:id="@+id/tv_plan_nombre"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Plan"
+                                android:text="—"
                                 android:textSize="20sp"
                                 android:textStyle="bold"
                                 android:textColor="@color/blanco" />
@@ -97,7 +112,7 @@
                                 android:id="@+id/tv_plan_tipo"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Tipo"
+                                android:text="—"
                                 android:textSize="13sp"
                                 android:textColor="@color/gris_texto" />
                         </LinearLayout>
@@ -115,7 +130,6 @@
                             android:paddingVertical="4dp" />
                     </LinearLayout>
 
-                    <!-- Accesos restantes (grande) -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -139,7 +153,6 @@
                             android:textColor="@color/gris_texto" />
                     </LinearLayout>
 
-                    <!-- Fecha de vencimiento -->
                     <TextView
                         android:id="@+id/tv_fecha_fin"
                         android:layout_width="wrap_content"
@@ -158,7 +171,7 @@
                         android:layout_marginTop="20dp"
                         android:layout_marginBottom="16dp" />
 
-                    <!-- QR de entrada -->
+                    <!-- QR -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -176,7 +189,7 @@
                         android:layout_gravity="center_horizontal"
                         android:background="@android:color/white"
                         android:padding="8dp"
-                        android:contentDescription="Código QR de acceso al gimnasio" />
+                        android:contentDescription="Código QR de acceso" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -194,8 +207,8 @@
                 android:id="@+id/card_sin_suscripcion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
                 android:visibility="gone"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
                 app:cardBackgroundColor="@color/fondo_card"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp">
@@ -231,6 +244,41 @@
                         android:textColor="@color/gris_texto"
                         android:gravity="center"
                         android:layout_marginTop="8dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card Últimas entradas -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_entradas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/fondo_card"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ÚLTIMAS VISITAS"
+                        android:textSize="11sp"
+                        android:textColor="@color/gris_texto"
+                        android:letterSpacing="0.1"
+                        android:layout_marginBottom="12dp" />
+
+                    <!-- Los TextViews de entradas se añaden dinámicamente aquí -->
+                    <LinearLayout
+                        android:id="@+id/layout_entradas_contenido"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" />
+
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 

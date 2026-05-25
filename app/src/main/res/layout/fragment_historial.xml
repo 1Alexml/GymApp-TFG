@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/swipe_refresh"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -9,17 +10,41 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@color/fondo_oscuro"
-        android:padding="20dp">
+        android:background="@color/fondo_oscuro">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <!-- Cabecera con título y tabs (el padding solo aquí) -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Historial de entradas"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:textColor="@color/blanco"
-            android:layout_marginBottom="16dp" />
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Historial de entradas"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/blanco"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Tabs de gimnasios (oculto si solo hay 1) -->
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_gimnasios"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginBottom="8dp"
+                app:tabMode="scrollable"
+                app:tabGravity="start"
+                app:tabIndicatorColor="@color/verde_activo"
+                app:tabSelectedTextColor="@color/blanco"
+                app:tabTextColor="@color/gris_texto"
+                app:tabBackground="@color/fondo_card"
+                style="@style/Widget.MaterialComponents.TabLayout" />
+
+        </LinearLayout>
 
         <ProgressBar
             android:id="@+id/progress_bar"
@@ -33,7 +58,7 @@
             android:id="@+id/tv_sin_entradas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Aún no has visitado el gimnasio."
+            android:text="Aún no has visitado este gimnasio."
             android:textSize="14sp"
             android:textColor="@color/gris_texto"
             android:visibility="gone"
@@ -44,7 +69,9 @@
             android:id="@+id/recycler_entradas"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:clipToPadding="false" />
+            android:clipToPadding="false"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="8dp" />
 
     </LinearLayout>
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
