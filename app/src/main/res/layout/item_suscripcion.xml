@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    app:cardBackgroundColor="@color/fondo_card"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Nombre del gimnasio (encabezado) -->
+        <TextView
+            android:id="@+id/tv_item_gimnasio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="—"
+            android:textSize="11sp"
+            android:textColor="@color/gris_texto"
+            android:letterSpacing="0.1"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Nombre del plan -->
+        <TextView
+            android:id="@+id/tv_item_nombre_plan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="—"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/blanco" />
+
+        <!-- Tipo de plan -->
+        <TextView
+            android:id="@+id/tv_item_tipo_plan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="—"
+            android:textSize="13sp"
+            android:textColor="@color/gris_texto"
+            android:layout_marginTop="4dp" />
+
+        <!-- Precio -->
+        <TextView
+            android:id="@+id/tv_item_precio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="—"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/verde_activo"
+            android:layout_marginTop="10dp" />
+
+        <!-- Badge estado -->
+        <TextView
+            android:id="@+id/tv_item_estado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ACTIVA"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="@color/verde_activo"
+            android:background="@drawable/bg_estado_badge"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="4dp"
+            android:layout_marginTop="10dp" />
+
+        <!-- Separador -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gris_texto"
+            android:alpha="0.2"
+            android:layout_marginTop="14dp"
+            android:layout_marginBottom="14dp" />
+
+        <!-- Fechas -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Inicio"
+                    android:textSize="11sp"
+                    android:textColor="@color/gris_texto" />
+                <TextView
+                    android:id="@+id/tv_item_fecha_inicio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="—"
+                    android:textSize="14sp"
+                    android:textColor="@color/blanco" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Vencimiento"
+                    android:textSize="11sp"
+                    android:textColor="@color/gris_texto" />
+                <TextView
+                    android:id="@+id/tv_item_fecha_fin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="—"
+                    android:textSize="14sp"
+                    android:textColor="@color/blanco" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Accesos restantes -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Accesos restantes"
+            android:textSize="11sp"
+            android:textColor="@color/gris_texto"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/tv_item_accesos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="—"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="@color/verde_activo"
+            android:layout_marginBottom="8dp" />
+
+        <ProgressBar
+            android:id="@+id/progress_item_accesos"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:progress="0"
+            android:max="100"
+            android:progressTint="@color/verde_activo"
+            android:progressBackgroundTint="@color/fondo_oscuro" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

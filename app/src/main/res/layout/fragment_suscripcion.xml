@@ -1,235 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/swipe_refresh"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/fondo_oscuro">
+        android:orientation="vertical"
+        android:background="@color/fondo_oscuro"
+        android:padding="20dp">
 
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:visibility="gone"
+            android:indeterminateTint="@color/verde_activo" />
+
+        <!-- Sin suscripciones -->
         <LinearLayout
+            android:id="@+id/layout_sin_sus"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="20dp">
+            android:gravity="center"
+            android:visibility="gone"
+            android:padding="32dp">
 
-            <ProgressBar
-                android:id="@+id/progress_bar"
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:visibility="gone"
-                android:indeterminateTint="@color/verde_activo" />
+                android:text="⚠️"
+                android:textSize="40sp" />
 
-            <!-- SIN suscripción -->
-            <LinearLayout
-                android:id="@+id/layout_sin_sus"
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:text="Sin suscripciones activas"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/blanco"
                 android:gravity="center"
-                android:visibility="gone"
-                android:padding="32dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="⚠️"
-                    android:textSize="40sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Sin suscripción activa"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/blanco"
-                    android:gravity="center"
-                    android:layout_marginTop="12dp" />
-            </LinearLayout>
-
-            <!-- CON suscripción -->
-            <LinearLayout
-                android:id="@+id/layout_con_sus"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:visibility="gone">
-
-                <!-- Card Plan -->
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    app:cardBackgroundColor="@color/fondo_card"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="4dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="20dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="PLAN CONTRATADO"
-                            android:textSize="11sp"
-                            android:textColor="@color/gris_texto"
-                            android:letterSpacing="0.1"
-                            android:layout_marginBottom="12dp" />
-
-                        <TextView
-                            android:id="@+id/tv_nombre_plan"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="—"
-                            android:textSize="22sp"
-                            android:textStyle="bold"
-                            android:textColor="@color/blanco" />
-
-                        <TextView
-                            android:id="@+id/tv_tipo_plan"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="—"
-                            android:textSize="13sp"
-                            android:textColor="@color/gris_texto"
-                            android:layout_marginTop="4dp" />
-
-                        <TextView
-                            android:id="@+id/tv_precio"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="—"
-                            android:textSize="24sp"
-                            android:textStyle="bold"
-                            android:textColor="@color/verde_activo"
-                            android:layout_marginTop="12dp" />
-
-                        <TextView
-                            android:id="@+id/tv_estado_sus"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="ACTIVA"
-                            android:textSize="12sp"
-                            android:textStyle="bold"
-                            android:textColor="@color/verde_activo"
-                            android:background="@drawable/bg_estado_badge"
-                            android:paddingHorizontal="10dp"
-                            android:paddingVertical="4dp"
-                            android:layout_marginTop="12dp" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- Card Fechas y Accesos -->
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:cardBackgroundColor="@color/fondo_card"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="4dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="20dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="DETALLES"
-                            android:textSize="11sp"
-                            android:textColor="@color/gris_texto"
-                            android:letterSpacing="0.1"
-                            android:layout_marginBottom="12dp" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:layout_marginBottom="12dp">
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Inicio"
-                                    android:textSize="11sp"
-                                    android:textColor="@color/gris_texto" />
-                                <TextView
-                                    android:id="@+id/tv_fecha_inicio"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="—"
-                                    android:textSize="15sp"
-                                    android:textColor="@color/blanco" />
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Vencimiento"
-                                    android:textSize="11sp"
-                                    android:textColor="@color/gris_texto" />
-                                <TextView
-                                    android:id="@+id/tv_fecha_fin"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="—"
-                                    android:textSize="15sp"
-                                    android:textColor="@color/blanco" />
-                            </LinearLayout>
-                        </LinearLayout>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Accesos restantes"
-                            android:textSize="11sp"
-                            android:textColor="@color/gris_texto"
-                            android:layout_marginBottom="4dp" />
-
-                        <TextView
-                            android:id="@+id/tv_accesos_restantes"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="—"
-                            android:textSize="32sp"
-                            android:textStyle="bold"
-                            android:textColor="@color/verde_activo"
-                            android:layout_marginBottom="8dp" />
-
-                        <ProgressBar
-                            android:id="@+id/progress_accesos"
-                            style="?android:attr/progressBarStyleHorizontal"
-                            android:layout_width="match_parent"
-                            android:layout_height="8dp"
-                            android:progress="0"
-                            android:max="100"
-                            android:progressTint="@color/verde_activo"
-                            android:progressBackgroundTint="@color/fondo_oscuro" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-            </LinearLayout>
+                android:layout_marginTop="12dp" />
         </LinearLayout>
-    </ScrollView>
+
+        <!-- Lista de suscripciones (todas, con gimnasio) -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_suscripciones"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:clipToPadding="false" />
+
+    </LinearLayout>
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
