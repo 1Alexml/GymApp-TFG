@@ -13,10 +13,20 @@
         <item name="colorOnSurface">@color/blanco</item>
         <item name="android:statusBarColor">@color/fondo_card</item>
         <item name="android:navigationBarColor">@color/fondo_card</item>
+        <item name="android:textColorPrimary">@color/blanco</item>
+        <item name="android:textColorSecondary">@color/gris_texto</item>
     </style>
 
     <!-- Splash sin ActionBar -->
     <style name="Theme.GymClientApp.Splash" parent="Theme.GymClientApp">
         <item name="android:windowFullscreen">true</item>
+    </style>
+    <!-- Estilo oscuro para AlertDialogs -->
+    <style name="DialogOscuro" parent="ThemeOverlay.MaterialComponents.Dialog.Alert">
+        <item name="android:background">@color/fondo_card</item>
+        <item name="android:textColorPrimary">@color/blanco</item>
+        <item name="android:textColorSecondary">@color/gris_texto</item>
+        <item name="colorOnSurface">@color/blanco</item>
+        <item name="colorAccent">@color/verde_activo</item>
     </style>
 </resources>

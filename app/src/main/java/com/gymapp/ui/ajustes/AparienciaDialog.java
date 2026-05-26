@@ -3,7 +3,7 @@ package com.gymapp.ui.ajustes;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
-
+import com.gymapp.R;
 import com.gymapp.utils.ThemeManager;
 
 /**
@@ -20,7 +20,7 @@ public class AparienciaDialog {
         String[] opciones = { "Naranja", "Azul", "Morado" };
         int seleccionado  = tm.getTemaId() - 1;  // 1→0, 2→1, 3→2
 
-        new androidx.appcompat.app.AlertDialog.Builder(activity)
+        new androidx.appcompat.app.AlertDialog.Builder(activity, R.style.DialogOscuro)
                 .setTitle("Cambiar apariencia")
                 .setSingleChoiceItems(opciones, seleccionado, (dialog, which) -> {
                     int nuevoId = which + 1;

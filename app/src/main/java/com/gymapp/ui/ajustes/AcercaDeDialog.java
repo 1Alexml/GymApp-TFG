@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.text.Html;
 import android.widget.TextView;
+import com.gymapp.R;
 
 import androidx.appcompat.app.AlertDialog.Builder;
 
@@ -21,7 +22,7 @@ public class AcercaDeDialog {
                 "Desarrollado como proyecto TFG.<br/><br/>" +
                 "<small>© 2026 ADR GYM SOFTWARE. Todos los derechos reservados.</small>";
 
-        new androidx.appcompat.app.AlertDialog.Builder(ctx)
+        new androidx.appcompat.app.AlertDialog.Builder(ctx, R.style.DialogOscuro)
                 .setTitle("Acerca de")
                 .setMessage(Html.fromHtml(html, Html.FROM_HTML_MODE_LEGACY))
                 .setPositiveButton("Cerrar", null)
